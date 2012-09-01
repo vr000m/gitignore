@@ -9,9 +9,8 @@ progs=(vim.gitignore TextMate.gitignore OSX.gitignore Linux.gitignore Emacs.giti
 for i in "${progs[@]}"
 do
     echo "Downloading "$link_gitignore/Global/$i
-    curl $link_gitignore/Global/$i > $i
     echo -e "\n#### "$i"\n" >> .global_gitignore
-    cat $i >> .global_gitignore
+    curl $link_gitignore/Global/$i >> .global_gitignore
 done
 
 
@@ -20,9 +19,8 @@ langs=(Autotools.gitignore C++.gitignore C.gitignore LaTeX.gitignore Python.giti
 for i in "${langs[@]}"
 do
     echo "Downloading "$link_gitignore/$i
-    curl $link_gitignore/$i > $i
     echo -e "\n#### "$i"\n" >> .global_gitignore
-    cat $i >> .global_gitignore
+    curl $link_gitignore/$i >> .global_gitignore
     
     #wget --ca-certificate=/opt/local/share/curl/curl-ca-bundle.crt $link_gitignore/$i > $i
 done
