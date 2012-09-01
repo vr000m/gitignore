@@ -3,6 +3,8 @@
 rm .global_gitignore
 link_gitignore="https://raw.github.com/github/gitignore/master"
 
+echo -e "#### Output generated from https://github.com/vr000m/gitignore\n" >> .global_gitignore
+
 progs=(vim.gitignore TextMate.gitignore OSX.gitignore Linux.gitignore Emacs.gitignore Eclipse.gitignore )
 for i in "${progs[@]}"
 do
@@ -13,7 +15,7 @@ do
 done
 
 
-langs=(Autotools.gitignore C++.gitignore C.gitignore LaTeX.gitignore Python.gitignore)
+langs=(Autotools.gitignore C++.gitignore C.gitignore LaTeX.gitignore Python.gitignore Node.gitignore)
 
 for i in "${langs[@]}"
 do
