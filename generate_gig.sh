@@ -1,26 +1,26 @@
 #!/bin/bash
 #.gitignore are available at https://github.com/github/gitignore
-rm .global_gitignore
+rm global_gitignore
 link_gitignore="https://raw.github.com/github/gitignore/master"
 
-echo -e "#### Output generated from https://github.com/vr000m/gitignore\n" >> .global_gitignore
+echo -e "#### Output generated from https://github.com/vr000m/gitignore\n" >> global_gitignore
 
 progs=(vim.gitignore TextMate.gitignore OSX.gitignore Linux.gitignore Emacs.gitignore Eclipse.gitignore )
 for i in "${progs[@]}"
 do
     echo "Downloading "$link_gitignore/Global/$i
     echo -e "\n#### "$i"\n" >> .global_gitignore
-    curl $link_gitignore/Global/$i >> .global_gitignore
+    curl $link_gitignore/Global/$i >> global_gitignore
 done
 
 
-langs=(Autotools.gitignore C++.gitignore C.gitignore LaTeX.gitignore Python.gitignore Node.gitignore)
+langs=(Autotools.gitignore C++.gitignore C.gitignore LaTeX.gitignore Python.gitignore Node.gitignore Objective-C.gitignore)
 
 for i in "${langs[@]}"
 do
     echo "Downloading "$link_gitignore/$i
-    echo -e "\n#### "$i"\n" >> .global_gitignore
-    curl $link_gitignore/$i >> .global_gitignore
+    echo -e "\n#### "$i"\n" >> global_gitignore
+    curl $link_gitignore/$i >> global_gitignore
     
     #wget --ca-certificate=/opt/local/share/curl/curl-ca-bundle.crt $link_gitignore/$i > $i
 done
